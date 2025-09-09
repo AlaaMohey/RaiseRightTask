@@ -1,0 +1,8 @@
+<div class="campaign-card" (click)="goDetail()">
+  <img [src]="campaign.imageUrl" alt="{{campaign.name}}" />
+  <h3>{{ campaign.name }}</h3>
+  <div class="progress">
+    <div class="progress-bar" [style.width.%]="percent"></div>
+  </div>
+  <p>{{ campaign.currentAmount | currency }} of {{ campaign.goal | currency }}</p>
+</div>
