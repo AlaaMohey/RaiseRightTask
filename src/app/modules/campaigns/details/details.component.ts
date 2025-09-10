@@ -5,12 +5,15 @@ import { ActivatedRoute } from '@angular/router';
 import { CampaignService } from '../../../core/services/campaign.service';
 import { SignailRService } from '../../../core/services/singalr.service';
 import { GraphqlService } from '../../../core/services/graph-ql.service';
-import { CurrencyPipe } from '@angular/common';
+import { CommonModule, CurrencyPipe } from '@angular/common';
+import e from 'express';
+import { DonateFormComponent } from '../donate-form/donate-form.component';
+import { SotialNotifyComponent } from '../sotial-notify/sotial-notify.component';
 
 @Component({
   selector: 'app-details',
   standalone: true,
-  imports: [CurrencyPipe],
+  imports: [CurrencyPipe,CommonModule,DonateFormComponent,SotialNotifyComponent],
   templateUrl: './details.component.html',
   styleUrl: './details.component.scss',
   providers: [CurrencyPipe]
@@ -19,40 +22,46 @@ export class DetailsComponent {
 campaign!: Campaign;
   errorMessages: string[] = [];
   private subs: Subscription[] = [];
-
+  percentValue!: number;
   constructor(
     private route: ActivatedRoute,
-   private campagnService:CampaignService, 
-   private graphqlService: GraphqlService,
-       private signalRService: SignailRService
+    private campagnService: CampaignService,
+    private graphqlService: GraphqlService,
+    private signalRService: SignailRService
   ) {}
 
   ngOnInit() {
     const id = Number(this.route.snapshot.paramMap.get('id'));
+this.graphqlService.getCampaignDetails(id).subscribe({
+  next: (res: any) => {
+    this.campaign = res?.campaign;
+    if (this.campaign) {
+      console.log('Loaded campaign', this.campaign);
+      this.campaign.currentAmount = this.campaign.currentAmount || 0;
+      this.campaign.donors = this.campaign.donors || [];
+    }
 
-    // ✅ GraphQL query للحصول على تفاصيل الحملة
-    this.graphqlService.getCampaignDetails(id).subscribe({
-      next: (res: any) => {
-        this.campaign = res.data?.campaign;
-        if (res.errors) {
-          this.errorMessages = res.errors.map((e: any) => e.message);
-        }
-      },
-      error: err => {
-        this.errorMessages.push('Failed to load campaign details.');
-        console.error(err);
-      }
-    });
-
-    // ✅ SignalR subscription للتبرعات الجديدة
+    // Handle partial GraphQL errors
+    if (res.errors && res.errors.length > 0) {
+      this.errorMessages.push('Some data could not be loaded correctly.');
+      console.warn('GraphQL partial errors:', res.errors);
+    }
+  },
+  error: err => {
+    console.log('Error loading campaign details', err[0]);
+    this.errorMessages.push(err[0].message || 'Failed to load campaign details.');
+    console.error(err);
+  }
+});
     const sub = this.signalRService.donation$.subscribe(evt => {
       if (this.campaign && evt.campaignId === this.campaign.id) {
         this.campaign.currentAmount += evt.amount;
+        this.percentValue = (this.campaign.currentAmount / this.campaign.goal) * 100;
         this.campaign.donors.unshift({
-          name: 'Anonymous',
-          amount: evt.amount
+          name: evt.name,
+          amount: evt.amount,
+          new: true
         });
-        // force re-render
         this.campaign = { ...this.campaign };
       }
     });

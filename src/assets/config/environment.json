@@ -1,4 +1,4 @@
 {
   "baseAddressForAPI": "https://raise-right-assessment-mocks.up.railway.app",
-  "wsBaseAddressForAPI":""
+  "wsBaseAddressForAPI":"wss://raise-right-assessment-mocks.up.railway.app/ws"
 }

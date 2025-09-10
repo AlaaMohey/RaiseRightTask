@@ -1,23 +1,41 @@
 <div class="footer">
   <div class="grid-container">
     <div class="grid-item">
+      <h3>Products</h3>
+      <ul>
+        <li *ngFor="let i of productList">
+          <a>{{ i.name }}</a>
+          <span *ngIf="i.isNew" class="new-badge">New</span>
+        </li>
+      </ul>
+    </div>
+    <div class="grid-item">
       <h3>Company</h3>
       <ul>
-        <li *ngFor="let i of companyList"><a>{{ i.name }}</a></li>
+        <li *ngFor="let i of companyList">
+          <a>{{ i.name }}</a>
+          <span *ngIf="i.isNew" class="new-badge">New</span>
+        </li>
       </ul>
     </div>
 
     <div class="grid-item">
       <h3>Resources</h3>
       <ul>
-        <li *ngFor="let i of resourcesList"><a>{{ i.name }}</a></li>
+        <li *ngFor="let i of resourcesList">
+          <a>{{ i.name }}</a>
+        <span *ngIf="i.isNew" class="new-badge">New</span>
+        </li>
       </ul>
     </div>
 
     <div class="grid-item">
       <h3>Legal</h3>
       <ul>
-        <li *ngFor="let i of legalList"><a>{{ i.name }}</a></li>
+        <li *ngFor="let i of legalList">
+          <a>{{ i.name }}</a>
+          <span *ngIf="i.isNew" class="new-badge">New</span>
+        </li>
       </ul>
     </div>
   </div>

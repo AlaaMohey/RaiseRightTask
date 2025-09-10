@@ -26,13 +26,11 @@ campaigns: Campaign[] = [];
       this.campaigns = data;
       data.forEach(c => this.map.set(c.id, c));
     });
-
-    // اشترك في التبرعات real-time من SignalR
     const sub = this.signalRService.donation$.subscribe(evt => {
       const c = this.map.get(evt.campaignId);
       if (c) {
         c.currentAmount += evt.amount;
-        this.campaigns = [...this.campaigns]; // trigger UI refresh
+        this.campaigns = [...this.campaigns];
       }
     });
 

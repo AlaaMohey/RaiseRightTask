@@ -19,11 +19,9 @@ export class CardComponent {
 
   constructor(private router: Router) {}
   ngOnInit() {
-    console.log(this.campaign);
   }
   get percent() {
     const percent = (this.campaign.currentAmount / this.campaign.goal) * 100;
-    console.log(percent);
     return percent;
   }
 

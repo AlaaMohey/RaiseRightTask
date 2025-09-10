@@ -1,0 +1,191 @@
+.content-section {
+ height: 752px;
+  padding:  0 96px;
+  gap: 64px;
+  .row {
+    height: 560px;
+    display: flex;
+    gap: 32px;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+   .column {
+      flex: 1;
+     width: 50%;
+     .subheading{
+        font-weight: 600;
+     }
+     .heading{
+        font-size: 48px;
+        letter-spacing: -2%;
+     }
+    }
+  }
+.progress-section{
+       height: 328px;
+.amounts{
+   display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 32px;
+    .amount-item{
+        height: 112px;
+        .amount-label{
+          display: block;
+          font-size: 18px;
+          font-weight: 500;
+          color: var(--text);
+        }
+        .amount-value{
+            display: block;
+            font-size: 60px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+    }
+}
+}
+}
+
+.donors-section{
+    height: 484px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 32px;
+    .section-title{
+        text-align: center;
+        font-size: 36px;
+        font-weight: 600;
+        color: var(--text);
+        letter-spacing: -2%;
+        gap: 48px;
+        padding: 0 32px;
+    }
+    .donors-list{
+
+        width: 100%;
+       display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 32px;
+        .donor-item{
+            height: 68px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            border-bottom: 1px solid #e4e7ec;
+            .donor-name{
+                display: block;
+                align-content: end;
+                justify-content: space-between;
+                font-size: 16px;
+                font-weight: 500;
+                color: var(--text);
+            }
+            .donor-amount{
+                display: block;
+                font-size: 16px;
+                font-weight: 500;
+                color: var(--muted);
+                gap: 24px;
+            }
+        }
+    }
+}
+
+.new-badge {
+    background-color: #D1FAE5;
+    color: #027A48;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 12px;
+    float: right;
+}
+
+.alert-banner {
+  background-color: #fff8e1; 
+  color: #8a6d3b;         
+  border: 1px solid #ffe0b2;
+  padding: 8px 12px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+
+
+
+
+
+
+
+
+/* 📱 Mobile responsiveness */
+@media (max-width: 768px) {
+  .sotial-notify-section {
+  display: none;
+}
+  .content-section {
+    padding: 0 16px;
+    height: auto; // let height adjust naturally
+    justify-content: center;
+    align-items: center;
+    .row {
+      flex-direction: column;
+      height: auto;
+      gap: 24px;
+
+      .column {
+        width: 100%; // stack columns
+        flex: unset;
+
+      
+      }
+    }
+
+    .progress-section {
+      height: auto;
+
+      .amounts {
+        grid-template-columns: 1fr; 
+        gap: 16px;
+
+        .amount-item {
+          height: auto;
+
+          .amount-value {
+          
+            text-align: center;
+          }
+          .amount-label {
+         
+              text-align: center;
+          }
+        }
+      }
+    }
+  }
+
+  .donors-section {
+    height: auto;
+    padding: 0 16px;
+
+    .section-title {
+      font-size: 24px;
+      padding: 0;
+    }
+ 
+    .donors-list {
+        width: 100%;
+      grid-template-columns: 1fr; // one donor per row
+      gap: 16px;
+
+      .donor-item {
+        gap: 8px;
+
+      }
+    }
+  }
+}

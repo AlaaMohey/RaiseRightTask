@@ -1,25 +1,78 @@
-<!-- <div *ngIf="campaign" class="campaign-detail">
-  <img [src]="campaign.imageUrl" [alt]="campaign.name" class="w-full mb-4" />
 
-  <h2>{{ campaign.name }}</h2>
-  <p>{{ campaign.description }}</p>
 
-  <div class="goal">
-    Goal: {{ campaign.goal | currency }}
-  </div>
-  <div class="amount">
-    Current: {{ campaign.currentAmount | currency }}
+<div class="details-container" >
+    <div *ngIf="errorMessages.length > 0" class="alert-banner">
+    <span *ngFor="let msg of errorMessages">{{ msg }}</span>
   </div>
 
-  <h3>Donors</h3>
-  <ul>
-    <li *ngFor="let donor of campaign.donors">
-      {{ donor.name }} donated {{ donor.amount | currency }}
-    </li>
-  </ul>
+    <section class="hero container">
+      <nav class="breadcrumb">
+        <a routerLink="/campaigns">Campaigns</a>
+        <span>.</span>
+        <span>{{ campaign?.name || 'Details' }}</span>
+      </nav>
+    <p class="hero-title">Masjid Area Extension</p> 
+  </section>
+  <section class="content-section" *ngIf="campaign">
+    <div class="row">
+      <div class="column">
+        <img [src]="campaign.imageUrl" [alt]="campaign.name" height="560" width="100%" class="campaign-image" />
+      </div>
+      <div class="column">
+        <h2 class="subheading">{{ campaign.name }}</h2>
+        <p class="heading">{{ campaign.description }}</p>
+
+       <section class="progress-section">
+          <div class="progress-container">
+             <div class="progress-bar" [style.width.%]="percentValue"></div>
+          </div>
+        <div class="amounts">
+         
+          <div class="amount-item">
+            <span class="amount-value">{{ campaign.goal | currency }}</span>
+            <span class="amount-label">Campaign Target</span>
+          </div>
+           <div class="amount-item">
+            <span class="amount-value">{{ percentValue | number: '1.0-0' }}%</span>
+            <span class="amount-label">Campaign Target Achieved</span>
+          </div>
+           <div class="amount-item">
+            <span class="amount-value">{{ campaign.currentAmount | currency }}</span>
+            <span class="amount-label">Raised Funds</span>
+          </div>
+            <div class="amount-item">
+            <span class="amount-value">{{ campaign.donors.length }}+</span>
+            <span class="amount-label">Donors</span>
+          </div>
+        </div>
+        </section>
+      </div>
+      
+    </div>
+  </section>
+
+  <section class="donors-section" *ngIf="campaign">
+    <ul>
+      <li>Details</li>
+    </ul>
+    <h3 class="section-title">Recent Donors</h3>
+    <ul class="donors-list">
+      <li *ngFor="let donor of campaign.donors" class="donor-item">
+      
+        <span class="donor-name">{{ donor.name }}
+        <span *ngIf="donor.new" class="new-badge">New</span>
+        </span>
+        <span class="donor-amount">
+          <span style="color: #A4A7AE;">$</span>
+          {{ donor.amount | number: '1.0-0' }}</span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="donate-form-section">
+    <app-donate-form></app-donate-form>
+  </section>
+  <section class="sotial-notify-section">
+    <app-sotial-notify></app-sotial-notify>
+  </section>
 </div>
-
-
-<div *ngIf="errorMessages.length > 0" class="alert alert-warning mt-3">
-  <p *ngFor="let msg of errorMessages">{{ msg }}</p>
-</div> -->

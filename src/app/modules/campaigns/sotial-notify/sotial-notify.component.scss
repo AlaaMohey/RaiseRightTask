@@ -1,0 +1,29 @@
+.soltial-container {
+  background-color: #F2F2F7;
+  padding: 48px 96px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+
+  p {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    margin: 8px 0;
+    color: var(--muted);
+  }
+
+  .line {
+    display: flex;
+    justify-content: space-between; // ✅ spread logos across full width
+    align-items: center;
+    width: 100%;
+  }
+
+  .line img {
+    max-height: 40px; // control logo size
+    object-fit: contain;
+  }
+}

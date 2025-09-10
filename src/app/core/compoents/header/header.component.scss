@@ -1,9 +1,13 @@
 .site-header {
+  height: 80px;
+  display: flex;
+  justify-content: center;
   .header-inner {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 26px 0;
+    padding: 0px 32px;
     flex-wrap: wrap;
   }
 
@@ -61,13 +65,12 @@
     cursor: pointer;
   }
 
-  /* 📱 Mobile styles */
   @media (max-width: 768px) {
     .menu-toggle {
       display: block;
     }
 
-    .nav-links {
+    .nav-links ,.auth {
       display: none;
       flex-direction: column;
       gap: 16px;
@@ -79,19 +82,10 @@
       }
     }
 
-    .auth {
-      margin-top: 12px;
-      width: 100%;
-      justify-content: flex-start;
-
-      .btn-primary {
-        padding: 8px 12px;
-        font-size: 14px;
-      }
-    }
   }
 
   @media (max-width: 480px) {
+    height: 72px;
     .logo {
       img {
         width: 28px;

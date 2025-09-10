@@ -8,28 +8,36 @@ import { CommonModule } from '@angular/common';
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
+  productList = [
+  { name: 'Overview', link: '#' ,'isNew':false },
+  { name: 'Features', link: '#' ,'isNew':false },
+  { name: 'Solutions', link: '#' ,'isNew':true },
+  { name: 'Tutorials', link: '#' ,'isNew':false },
+  { name: 'Pricing', link: '#' ,'isNew':false },
+  { name: 'Releases', link: '#' ,'isNew':false }
+  ];
 companyList = [
-  { name: 'About us', link: '#' },
-  { name: 'Careers', link: '#' },
-  { name: 'Press', link: '#' },
-  { name: 'News', link: '#' },
-  { name: 'Media kit', link: '#' },
-  { name: 'Contact', link: '#' }
+  { name: 'About us', link: '#' ,'isNew':false },
+  { name: 'Careers', link: '#' ,'isNew':false },
+  { name: 'Press', link: '#' ,'isNew':false },
+  { name: 'News', link: '#' ,'isNew':false },
+  { name: 'Media kit', link: '#' ,'isNew':false },
+  { name: 'Contact', link: '#' ,'isNew':false }
 ];
 resourcesList = [
-  { name: 'Blog', link: '#' },
-  { name: 'Newsletter', link: '#' },
-  { name: 'Events', link: '#' },
-  { name: 'Help centre', link: '#' },
-  { name: 'Tutorials', link: '#' },
-  { name: 'Support', link: '#' }
+  { name: 'Blog', link: '#' ,'isNew':false },
+  { name: 'Newsletter', link: '#' ,'isNew':false },
+  { name: 'Events', link: '#' ,'isNew':false },
+  { name: 'Help centre', link: '#' ,'isNew':false },
+  { name: 'Tutorials', link: '#' ,'isNew':false },
+  { name: 'Support', link: '#' ,'isNew':false }
 ];
 legalList = [ 
-  { name: 'Terms', link: '#' },
-  { name: 'Privacy', link: '#' },
-  { name: 'Cookie', link: '#' },
-  { name: 'Licenses', link: '#' },
-  { name: 'Settings', link: '#' },
-  { name: 'Contact', link: '#' }
+  { name: 'Terms', link: '#' ,'isNew':false },
+  { name: 'Privacy', link: '#' ,'isNew':false },
+  { name: 'Cookie', link: '#' ,'isNew':false },
+  { name: 'Licenses', link: '#' ,'isNew':false },
+  { name: 'Settings', link: '#' ,'isNew':false },
+  { name: 'Contact', link: '#' ,'isNew':false }
 ];
 }
