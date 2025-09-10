@@ -1,8 +1,46 @@
-<div class="campaign-card" (click)="goDetail()">
+<!-- <div class="campaign-card" (click)="goDetail()">
   <img [src]="campaign.imageUrl" alt="{{campaign.name}}" />
   <h3>{{ campaign.name }}</h3>
   <div class="progress">
     <div class="progress-bar" [style.width.%]="percent"></div>
   </div>
   <p>{{ campaign.currentAmount | currency }} of {{ campaign.goal | currency }}</p>
+</div> -->
+
+
+<!-- {{percent}}
+<p-card header="Advanced Card" subheader="Card Subheader" [style]="{ width: '360px' }">
+    <ng-template pTemplate="header">
+          <img [src]="campaign.imageUrl" alt="{{campaign.name}}" />
+    </ng-template>
+    <p>
+        {{ campaign.description }}
+    </p>
+    <p-progressBar [value]="percent"></p-progressBar>
+    <ng-template pTemplate="footer">
+        <div class="flex gap-3 mt-1">
+      
+           <p>{{ campaign.currentAmount | currency }} of {{ campaign.goal | currency }}</p>
+        </div>
+    </ng-template>
+</p-card> -->
+
+<div class="card-wrapper" (click)="goDetail()">
+    <div class="card">
+      <div class="card-image">
+        <img [src]="campaign.imageUrl" width="280" height="296" alt="{{campaign.name}}" />
+      </div>
+      <div class="progress-container">
+        <div class="progress-bar" [style.width.%]="percent">
+          {{ percent | number:'1.0-1' }}%
+        </div>
+      </div>
+      <div class="card-content">
+        <h3>{{ campaign.name }}</h3>
+        <p>{{ campaign.description }}</p>
+      </div>
+      <div class="card-footer">
+        <p>{{ campaign.currentAmount | currency }} of {{ campaign.goal | currency }}</p>
+      </div>
+    </div>
 </div>
