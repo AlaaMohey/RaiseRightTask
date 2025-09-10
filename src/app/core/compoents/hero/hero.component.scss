@@ -8,24 +8,25 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-    h5 {
-        font-weight: 600;
+  line-height: 24px;
+  .kicker {
+    font-weight: 600;
     display: block;
-    color: $primary-color;
+    color: var(--primary);
     line-height: 24px;
   }
-h1{
-    font-size: $h1-size;
+.hero-title{
+    font-size: 57px;
     display: block;
-    color: $text-color-dark;
+    color: var(--text);
     font-weight: 700;
     line-height: 24px;
 }
 
-  p {
+  .hero-sub{
     font-size: 20px;
     text-align: center;
-    color: $text-color-gray;
+    color:var(--muted);
         line-height: 24px;
   }
 }

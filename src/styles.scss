@@ -1,16 +1,20 @@
-
-$primary-color: #7F56D9;
-
-
-$text-color-dark: #181D27;
-$text-color-gray: #6C757D;
-
-$h1-size: 57px;
-$h5-size: 18px;
-$p-size: 20px;
-
-
-*{
-  font-size: 16px;
-  font-family: 'Inter', sans-serif;
+:root{
+  --primary: #7b46e6; /* purple */
+  --text: #111827;
+  --muted: #6b7280;
+  --container: 1100px;
+  --radius: 12px;
+  --primary-color: #7b46e6;
+}
+*{box-sizing:border-box}
+body{
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color:var(--text);
+  margin:0;
+  background:white;
+}
+.container{
+  max-width:var(--container);
+  margin:0 auto;
+  padding:0 24px;
 }

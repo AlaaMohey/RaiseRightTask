@@ -1,0 +1,32 @@
+<div class="footer">
+  <div class="grid-container">
+    <div class="grid-item">
+      <h3>Company</h3>
+      <ul>
+        <li *ngFor="let i of companyList"><a>{{ i.name }}</a></li>
+      </ul>
+    </div>
+
+    <div class="grid-item">
+      <h3>Resources</h3>
+      <ul>
+        <li *ngFor="let i of resourcesList"><a>{{ i.name }}</a></li>
+      </ul>
+    </div>
+
+    <div class="grid-item">
+      <h3>Legal</h3>
+      <ul>
+        <li *ngFor="let i of legalList"><a>{{ i.name }}</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <section class="end">
+    <div class="logo">
+      <img src="assets/Logomark.png" alt="Crowdfund logo" width="36" height="36">
+      <span class="brand">Crowdfund</span>
+    </div>
+    <p class="copyright">© 2077 Crowdfund. All rights reserved.</p>
+  </section>
+</div>
