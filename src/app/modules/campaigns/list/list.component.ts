@@ -5,11 +5,12 @@ import { CampaignService } from '../../../core/services/campaign.service';
 import { SignailRService } from '../../../core/services/singalr.service';
 import { CardComponent } from '../card/card.component';
 import { CommonModule } from '@angular/common';
+import { HeroComponent } from "../../../core/compoents/hero/hero.component";
 
 @Component({
   selector: 'app-list',
   standalone: true,
-  imports: [CardComponent,CommonModule],
+  imports: [CardComponent, CommonModule, HeroComponent],
   templateUrl: './list.component.html',
   styleUrl: './list.component.scss'
 })

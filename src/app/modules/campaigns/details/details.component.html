@@ -15,13 +15,16 @@
   </section>
   <section class="content-section" *ngIf="campaign">
     <div class="row">
-      <div class="column">
+      <div class="column-left">
         <img [src]="campaign.imageUrl" [alt]="campaign.name" height="560" width="100%" class="campaign-image" />
       </div>
-      <div class="column">
-        <h2 class="subheading">{{ campaign.name }}</h2>
-        <p class="heading">{{ campaign.description }}</p>
+      <div class="column-right">
+        <div style="display: flex;flex-direction: column;gap: 12px;">
+            <h3 class="subheading">{{ campaign.name }}</h3>
+            <p class="heading">{{ campaign.description }}</p>
 
+        </div>
+      
        <section class="progress-section">
           <div class="progress-container">
              <div class="progress-bar" [style.width.%]="percentValue"></div>
@@ -52,21 +55,31 @@
   </section>
 
   <section class="donors-section" *ngIf="campaign">
-    <ul>
-      <li>Details</li>
-    </ul>
-    <h3 class="section-title">Recent Donors</h3>
+
+    <h3 class="section-title">Champions of the Cause</h3>
     <ul class="donors-list">
-      <li *ngFor="let donor of campaign.donors" class="donor-item">
-      
-        <span class="donor-name">{{ donor.name }}
-        <span *ngIf="donor.new" class="new-badge">New</span>
+      <li *ngFor="let donor of campaign.donors" class="donor">
+      <div class="item">
+        <span class="donor-name">
+          <span style="display: block;">
+              {{ donor.name }}
+          </span>
+          <span style="display: block;">
+            <div style="display: flex; flex-direction: row;gap: 8px;">
+           <span style="color: var(--muted);">$</span>
+          <span  style="color: var(--muted);">{{ donor.amount | number: '1.0-0' }}</span>
+     </div>
+
+          </span>
         </span>
+        
         <span class="donor-amount">
-          <span style="color: #A4A7AE;">$</span>
-          {{ donor.amount | number: '1.0-0' }}</span>
+             <span *ngIf="donor.new" class="new-badge">New</span>
+             </span>
+          </div>
       </li>
     </ul>
+   
   </section>
 
   <section class="donate-form-section">
@@ -75,4 +88,3 @@
   <section class="sotial-notify-section">
     <app-sotial-notify></app-sotial-notify>
   </section>
-</div>

@@ -1,170 +1,98 @@
-
-
+h3{
+  margin: 0;;
+}
 .footer {
-  padding: 64px 32px 48px;
-  gap: 64px;
+  padding: 4rem 2rem 3rem;   
+  gap: 4rem;                 
+     display: flex;
+  flex-direction: column;
   .grid-container {
     display: grid;
-    padding: 0 32px;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 32px;
+    padding: 0 2rem;         
+    grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr)); 
+    gap: 2rem;               
     justify-items: center;
     text-align: left;
-    @media (max-width: 768px) {
-       grid-template-columns: repeat(2, 1fr); 
+    
+    @media (max-width: 48rem) {  
+      grid-template-columns: repeat(2, 1fr);
     }
-
   }
-
+ .grid-item{
+  display: flex;
+  flex-direction: column;
+      gap: 2rem;
+ }
   h3 {
-     font-weight: 600;
-    font-size: 14px;
-    line-height: 24px;
+    font-weight: 600;
+    font-size: 0.875rem;     
+    line-height: 1.5rem;     
     color: var(--muted);
- 
   }
 
   ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
     list-style: none;
     padding: 0;
     margin: 0;
 
     li {
-      margin-bottom: 8px;
+     
 
       a {
-       text-decoration: none;
+        text-decoration: none;
         color: var(--text);
-        font-size: 16px;
+        font-size: 1rem;     
         font-weight: 600;
         transition: color 0.2s ease;
 
         &:hover {
           color: var(--primary);
         }
-        
       }
+
       .new-badge {
-          color: #027A48;
-          font-size: 12px;
-          font-weight: 500;
-           padding: 2px 8px;
-        }
+        margin: 0.125rem 0.5rem; 
+      }
     }
   }
 
   .end {
+    height:4.0625rem; ;
     border-top: 1px solid #e4e7ec;
-    padding-top: 24px;
+    padding-top: 1.5rem;     
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 16px;
-@media(max-width: 768px) {
-    justify-content: center;
-    text-align: center;
-  }
+    gap: 1rem;               
+
+    @media (max-width: 48rem) {
+      justify-content: center;
+      text-align: center;
+    }
+
     .logo {
       display: flex;
       align-items: center;
-      gap: 12px;
-
-      font-size: 18px;
+      gap: 0.75rem;          
+      font-size: 1.125rem;   
       font-weight: 700;
       color: var(--text);
 
       img {
-        width: 36px;
-        height: 36px;
+        width: 2.25rem;      
+        height: 2.25rem;
       }
     }
 
     .copyright {
-      font-weight: 400;
-      font-size: 16px;
+      font-weight: var(--reg-font-weight);
+      font-size: 1rem;       
       color: var(--muted);
       margin: 0;
     }
-
-  
   }
 }
-
-// .footer {
-//   padding: 64px 0 48px 0;
-//   height: 481px;
-//   gap: 64px;
-
-//   .grid-container {
-//     display: grid;
-//     padding: 0 32px;
-//     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* responsive columns */
-//     gap: 32px;
-//     justify-items: center;
-//     text-align: left;
-//   }
-
-//   h3 {
-//     font-weight: 600;
-//     font-size: 14px;
-//     line-height: 24px;
-//     color: var(--muted);
-//   }
-
-//   ul {
-//     list-style: none;
-//     padding: 0;
-//     margin: 0;
-
-//     li {
-//       margin-bottom: 8px;
-
-//       a {
-//         text-decoration: none;
-//         color: var(--text);
-//         font-size: 16px;
-//         font-weight: 600;
-//         transition: color 0.2s ease;
-
-//         &:hover {
-//           color:var(--primary);
-//         }
-//       }
-//     }
-//   }
-
-//   /* optional copyright / bottom note */
-//   .footer-bottom {
-//     margin-top: 40px;
-//     text-align: center;
-//     font-size: 14px;
-//     color: var(--muted);
-//   }
-
- 
-// }
-
-//  .end{
-//     display: flex;
-//     align-items: center;
-//     justify-content: space-between;
-//     padding: 0 32px;
-//     flex-wrap: wrap;
-//       .logo {
-//         display: flex;
-//         align-items: center;
-//         gap: 12px;
-//         font-weight: 700;
-
-//         img {
-//           width: 36px;
-//           height: 36px;
-//         }
-//       }
-//     .copyright{
-//       font-size: 14px;
-//       color: var(--muted);
-//       align-self: center;
-//     }
-//   }

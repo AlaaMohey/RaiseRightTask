@@ -3,17 +3,16 @@
     <div class="card-image">
       <img [src]="campaign.imageUrl" alt="{{ campaign.name }}" />
     </div>
-
     <div class="card-body">
         <div class="progress-container">
-        <div class="progress-bar" [style.width.%]="percent"></div>
+            <div class="progress-bar" [style.width.%]="percent"></div>
         </div>
-      <span class="card-title">{{ campaign.name }}</span>
-
-
-      <div class="card-stats">
-        <span>Target: {{ campaign.goal | currency }}</span>
-        <span>Raised: {{ campaign.currentAmount | currency }}</span>
+        <div class="spacer" >
+          <span class="card-title">{{ campaign.name }}</span>
+          <div class="card-stats">
+            <span>Target: {{ campaign.goal | currency }}</span>
+            <span>Raised: {{ campaign.currentAmount | currency }}</span>
+      </div>
       </div>
     </div>
   </div>

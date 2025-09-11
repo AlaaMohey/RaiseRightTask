@@ -1,190 +1,181 @@
+h3{
+  margin: 0;
+}
+
+
 .content-section {
- height: 752px;
-  padding:  0 96px;
-  gap: 64px;
+  padding: 0 6rem;      
+  gap: 16rem;         
+
+  display: flex;
+  padding: 4rem 0;
+  justify-content: space-between;
+  gap: 4rem;
+  background-color: var(--backgrond-section);  
   .row {
-    height: 560px;
+    height: 35rem;
     display: flex;
-    gap: 32px;
+    gap: 2rem;         
     width: 100%;
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
-   .column {
+
+    .column-left,.column-right {
       flex: 1;
-     width: 50%;
-     .subheading{
-        font-weight: 600;
-     }
-     .heading{
-        font-size: 48px;
-        letter-spacing: -2%;
-     }
+      width: 50%;
+    }
+    .column-right {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+      .subheading {
+      font-weight: var(--reg-font-weight);       
+      font-size: 1rem;        
+      line-height: 1.5rem;    
+      letter-spacing: 0;  
+      color: var(--muted);   
+      }
+
+      .heading {
+        font-size: 3rem;          
+        line-height: 3.75rem;     
+        letter-spacing: -0.02em;  
+      }
     }
   }
-.progress-section{
-       height: 328px;
-.amounts{
-   display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 32px;
-    .amount-item{
-        height: 112px;
-        .amount-label{
+
+  .progress-section {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    .amounts {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;            
+      .amount-item {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        .amount-label {
           display: block;
-          font-size: 18px;
+          font-size: 1.125rem; 
           font-weight: 500;
           color: var(--text);
         }
-        .amount-value{
-            display: block;
-            font-size: 60px;
-            font-weight: 700;
-            color: var(--primary);
-        }
-    }
-}
-}
-}
-
-.donors-section{
-    height: 484px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-left: 32px;
-    .section-title{
-        text-align: center;
-        font-size: 36px;
-        font-weight: 600;
-        color: var(--text);
-        letter-spacing: -2%;
-        gap: 48px;
-        padding: 0 32px;
-    }
-    .donors-list{
-
-        width: 100%;
-       display: grid;
-        grid-template-columns: repeat(2, 1fr); 
-        gap: 32px;
-        .donor-item{
-            height: 68px;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            border-bottom: 1px solid #e4e7ec;
-            .donor-name{
-                display: block;
-                align-content: end;
-                justify-content: space-between;
-                font-size: 16px;
-                font-weight: 500;
-                color: var(--text);
-            }
-            .donor-amount{
-                display: block;
-                font-size: 16px;
-                font-weight: 500;
-                color: var(--muted);
-                gap: 24px;
-            }
-        }
-    }
-}
-
-.new-badge {
-    background-color: #D1FAE5;
-    color: #027A48;
-    font-size: 12px;
-    font-weight: 500;
-    padding: 2px 8px;
-    border-radius: 12px;
-    float: right;
-}
-
-.alert-banner {
-  background-color: #fff8e1; 
-  color: #8a6d3b;         
-  border: 1px solid #ffe0b2;
-  padding: 8px 12px;
-  margin-bottom: 16px;
-  font-size: 14px;
-  border-radius: 4px;
-}
-
-
-
-
-
-
-
-
-
-/* 📱 Mobile responsiveness */
-@media (max-width: 768px) {
-  .sotial-notify-section {
-  display: none;
-}
-  .content-section {
-    padding: 0 16px;
-    height: auto; // let height adjust naturally
-    justify-content: center;
-    align-items: center;
-    .row {
-      flex-direction: column;
-      height: auto;
-      gap: 24px;
-
-      .column {
-        width: 100%; // stack columns
-        flex: unset;
-
-      
-      }
-    }
-
-    .progress-section {
-      height: auto;
-
-      .amounts {
-        grid-template-columns: 1fr; 
-        gap: 16px;
-
-        .amount-item {
-          height: auto;
-
-          .amount-value {
-          
-            text-align: center;
-          }
-          .amount-label {
-         
-              text-align: center;
-          }
+        .amount-value {
+          display: block;
+          font-size: 3.75rem; 
+          font-weight: 700;
+          color: var(--primary);
         }
       }
     }
   }
+}
+
+.donors-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 3.5rem 0;  
+  gap: 4rem;
+  
+  .section-title {
+    text-align: center;
+    font-size: 2.25rem;  
+    font-weight: var(--bold-font-weight)    ;
+    color: var(--text);
+    letter-spacing: -0.02em;
+    margin-bottom: 3rem;  
+    padding: 0 2rem;     
+  }
+
+  .donors-list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;           
+
+    .donor {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;          
+      border: 1px solid #E9EAEB;
+      border-radius: 1rem;
+    
+        .item{
+              padding: 1.5rem 1.75rem;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              gap: 1rem; 
+        }
+  
+      .donor-name {
+        font-size: 1rem;   
+        font-weight: 500;
+        color: var(--text);
+      }
+
+      .donor-amount {
+        font-size: 1rem;   
+        font-weight: 500;
+        color: var(--muted);
+      }
+    }
+  }
+}
+
+.alert-banner {
+  background-color: #fff8e1;
+  color: #8a6d3b;
+  border: 1px solid #ffe0b2;
+  padding: 0.5rem 0.75rem; 
+  margin-bottom: 1rem;     
+  font-size: 0.875rem;    
+  border-radius: 0.25rem;  
+}
+
+
+@media (max-width: 768px) {  
+  .sotial-notify-section {
+    display: none;
+  }
+
+  .content-section {
+    padding: 0 1rem;
+    justify-content: center;
+    align-items: center;
+
+    .row {
+      flex-direction: column;
+      gap: 1.5rem; 
+
+      .column-left, .column-right {
+        width: 100%;
+        flex: unset;
+      }
+    }
+
+  
+  }
 
   .donors-section {
-    height: auto;
-    padding: 0 16px;
+    padding: 0 1rem;
 
     .section-title {
-      font-size: 24px;
+      font-size: 1.5rem; 
       padding: 0;
     }
- 
+
     .donors-list {
-        width: 100%;
-      grid-template-columns: 1fr; // one donor per row
-      gap: 16px;
+      grid-template-columns: 1fr;
+      gap: 1rem; 
 
       .donor-item {
-        gap: 8px;
-
+        gap: 0.5rem; 
       }
     }
   }
