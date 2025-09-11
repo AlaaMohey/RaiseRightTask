@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Campaign } from '../../../core/models/campaign';
 import { Subscription } from 'rxjs';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { CampaignService } from '../../../core/services/campaign.service';
 import { SignailRService } from '../../../core/services/singalr.service';
 import { GraphqlService } from '../../../core/services/graph-ql.service';
@@ -13,7 +13,7 @@ import { SotialNotifyComponent } from '../sotial-notify/sotial-notify.component'
 @Component({
   selector: 'app-details',
   standalone: true,
-  imports: [CurrencyPipe,CommonModule,DonateFormComponent,SotialNotifyComponent],
+  imports: [CurrencyPipe,CommonModule,DonateFormComponent,SotialNotifyComponent,RouterModule],
   templateUrl: './details.component.html',
   styleUrl: './details.component.scss',
   providers: [CurrencyPipe]

@@ -5,13 +5,15 @@
     <span *ngFor="let msg of errorMessages">{{ msg }}</span>
   </div>
 
-    <section class="hero container">
+    <section class="hero " style="height: 13.75rem;" >
+      <div class="container">
       <nav class="breadcrumb">
         <a routerLink="/campaigns">Campaigns</a>
         <span>.</span>
         <span>{{ campaign?.name || 'Details' }}</span>
       </nav>
     <p class="hero-title">Masjid Area Extension</p> 
+    </div>
   </section>
   <section class="content-section" *ngIf="campaign">
     <div class="row">
@@ -19,7 +21,7 @@
         <img [src]="campaign.imageUrl" [alt]="campaign.name" height="560" width="100%" class="campaign-image" />
       </div>
       <div class="column-right">
-        <div style="display: flex;flex-direction: column;gap: 12px;">
+        <div style="display: flex;flex-direction: column;gap: 20px;">
             <h3 class="subheading">{{ campaign.name }}</h3>
             <p class="heading">{{ campaign.description }}</p>
 
@@ -57,7 +59,7 @@
   </section>
 
   <section class="donors-section" *ngIf="campaign">
-
+     
     <h3 class="section-title">Champions of the Cause</h3>
     <ul class="donors-list">
       <li *ngFor="let donor of campaign.donors" class="donor">
